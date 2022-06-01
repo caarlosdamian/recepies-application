@@ -29,8 +29,8 @@ export type Recipe = {
   servings: number;
   sourceUrl: string;
   openLicense: number | null;
-  image: string | null;
-  imageType: string | null;
+  image: string | undefined;
+  imageType: string | undefined;
   summary: string;
   cuisines: any[];
   dishTypes: string[];
