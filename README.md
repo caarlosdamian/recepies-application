@@ -1,6 +1,6 @@
 # Recepie Application 
 
-### [Live Site](https://caarlosdamian.github.io/cuisine/American)
+### [Live Site](https://caarlosdamian.github.io/recepies-application)
 
 ![Recepie](https://i.ibb.co/Sm3RmHd/Screen-Shot-2022-06-02-at-0-48-20.png)
 
