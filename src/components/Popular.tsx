@@ -2,9 +2,12 @@ import { useEffect, useId, useState } from "react";
 import { Recipe } from "../interfaces/interfaces";
 import styled from "styled-components";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-import "@splidejs/splide/css";
 
-const Wrapper = styled.div`
+import "@splidejs/splide/css";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+
+const Wrapper = styled(motion.div)`
   margin: 4rem 0rem;
 `;
 const Card = styled.div`
@@ -72,7 +75,13 @@ export const Popular = () => {
   }, []);
 
   return (
-    <Wrapper>
+    <Wrapper
+    
+    animate={{opacity:1}}
+    initial={{opacity:0}}
+    exit={{opacity:0}}
+    transition={{duration:0.5}}
+    >
       <h3>Popular Picks</h3>
       <Splide
         options={{
@@ -86,9 +95,11 @@ export const Popular = () => {
         {popular?.map((recipe: Recipe, i: number) => (
           <SplideSlide>
             <Card key={recipe.id * i}>
+            <Link to={`/recepie/${recipe.id}`}>
               <p>{recipe.title}</p>
               <img src={recipe.image} alt={recipe.title} />
               <Gradient />
+              </Link>
             </Card>
           </SplideSlide>
         ))}
