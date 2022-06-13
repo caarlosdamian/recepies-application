@@ -3,6 +3,7 @@ import { Recipe } from "../interfaces/interfaces";
 import styled from "styled-components";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/css";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   margin: 4rem 0rem;
@@ -85,9 +86,11 @@ export const Veggie = () => {
       {veggie?.map((recipe: Recipe, i: number) => (
         <SplideSlide>
           <Card key={recipe.id * i}>
+          <Link to={`/recepie/${recipe.id}`}>
             <p>{recipe.title}</p>
             <img src={recipe.image} alt={recipe.title} />
             <Gradient />
+            </Link>
           </Card>
         </SplideSlide>
       ))}
